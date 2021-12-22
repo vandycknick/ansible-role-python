@@ -18,7 +18,7 @@
       - libxmlsec1-dev
       - libffi-dev
       - liblzma-dev
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: ansible_os_family == 'Debian'
 
 - name: Install pyenv
   git:
