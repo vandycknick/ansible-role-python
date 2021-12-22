@@ -1,4 +1,4 @@
-pyenv_home_directory: ~/.local/share/pyenv
+pyenv_home_directory: "{{ ansible_env.HOME }}/.local/share/pyenv"
 
 pyenv_global_python: "3.10.1"
 
