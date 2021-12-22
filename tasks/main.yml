@@ -13,7 +13,7 @@
     PATH: "{{ pyenv_home_directory }}/bin:{{ pyenv_home_directory }}/shims:{{ ansible_env.PATH }}"
   args:
     creates: "{{ pyenv_home_directory }}/versions/{{ item }}/bin/python"
-  with_items: "{{ pyenv_python_versions | default([]) | [pyenv_global_python] }}"
+  with_items: "{{ pyenv_python_versions | default([]) + [pyenv_global_python] }}"
 
 - name: Set Python Global Interpreter
   shell: |
