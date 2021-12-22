@@ -1,0 +1,5 @@
+pyenv_home_directory: ~/.local/share/pyenv
+
+pyenv_global_python: "3.10.1"
+
+pyenv_python_versions: []
