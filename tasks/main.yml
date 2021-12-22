@@ -40,7 +40,10 @@
 
 - name: Set Python Global Interpreter
   shell: |
+    python --version 2> /dev/null || /bin/true
     pyenv global {{ pyenv_global_python }}
   environment:
     PYENV_ROOT: "{{ pyenv_home_directory }}"
     PATH: "{{ pyenv_home_directory }}/bin:{{ pyenv_home_directory }}/shims:{{ ansible_env.PATH }}"
+  register: result
+  changed_when: pyenv_global_python not in result.stdout
